@@ -31,11 +31,22 @@ import sys
 import calendar
 from datetime import datetime
 
-def patCalender():
-  month = int(input("Enter month: "))
-  year = int(input("Enter year: "))
+num_args = len(sys.argv)
 
-  if month == '' and year == '':
-    return datetime.date.today()
+cal = calendar.TextCalendar()
 
-patCalender()
+month = datetime.now().month
+year = datetime.now().year
+
+if num_args == 1:
+  pass
+elif num_args == 2:
+  month = int(sys.argv[1])
+elif num_args == 3:
+  month = int(sys.argv[1])
+  year = int(sys.argv[2])
+else:
+  print("usage: cal.py [month] [year]")
+  sys.exit(1)
+
+cal.prmonth(year, month)

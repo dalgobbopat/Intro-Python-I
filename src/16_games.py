@@ -18,4 +18,3 @@ while not got_it:
         got_it = True
     else:
         print("I don't know what that means. Try again please.")
-​ 
